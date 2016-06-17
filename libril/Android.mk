@@ -1,5 +1,6 @@
 # Copyright 2006 The Android Open Source Project
 
+#ifeq ($(USE_MFLD_LIBRIL),true)
 ifeq ($(BOARD_PROVIDES_LIBRIL),true)
 
 LOCAL_PATH:= $(call my-dir)
@@ -60,3 +61,4 @@ LOCAL_MODULE:= libril_static
 include $(BUILD_STATIC_LIBRARY)
 endif # ANDROID_BIONIC_TRANSITION
 endif # BOARD_PROVIDES_LIBRIL
+#endif # USE_MFLD_LIBRIL

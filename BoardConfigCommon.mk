@@ -196,3 +196,8 @@ endif
 
 # Use the non-open-source parts, if they're present
 -include vendor/asus/ctp-common/BoardConfigVendor.mk
+
+# MultiDisplay
+TARGET_USE_DUMMY_MULTIPLE_DISPLAY := false
+TARGET_HAS_MULTIPLE_DISPLAY := true
+USE_MDS_LEGACY := true

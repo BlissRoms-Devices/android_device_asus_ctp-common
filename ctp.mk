@@ -288,17 +288,19 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339
 #PRODUCT_PROPERTY_OVERRIDES += \
 #    dalvik.vm.isa.x86.features=sse4_2,aes_in,popcnt,movbe
 
+
 # MultiDisplay
 PRODUCT_PACKAGES += \
 	libmultidisplay
+
+# Marshmallow Compatibility Library
+PRODUCT_PACKAGES += \
+	libmmcompat
 
 # stlport required for our LP blobs
 PRODUCT_PACKAGES += \
 	libstlport
 
-# Marshmallow Compatibility Library
-PRODUCT_PACKAGES += \
-	libmmcompat
 
 # Features removed from "user" builds
 PRODUCT_PACKAGES += \
