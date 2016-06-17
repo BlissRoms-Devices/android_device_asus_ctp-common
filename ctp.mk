@@ -295,3 +295,7 @@ PRODUCT_PACKAGES += \
 # stlport required for our LP blobs
 PRODUCT_PACKAGES += \
 	libstlport
+
+# Marshmallow Compatibility Library
+PRODUCT_PACKAGES += \
+	libmmcompat
