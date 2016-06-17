@@ -291,3 +291,7 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339
 # MultiDisplay
 PRODUCT_PACKAGES += \
 	libmultidisplay
+
+# stlport required for our LP blobs
+PRODUCT_PACKAGES += \
+	libstlport
