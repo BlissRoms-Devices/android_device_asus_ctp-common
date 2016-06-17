@@ -283,3 +283,8 @@ PRODUCT_PACKAGES += \
 	procmem \
 	procrank
 
+#Custom RR OTA app
+PRODUCT_PACKAGES += \
+  OTA_Downloader \
+  RR_OTA
+
