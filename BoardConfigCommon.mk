@@ -55,6 +55,8 @@ BOARD_KERNEL_CMDLINE += debug_locks=0
 
 TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
 TARGET_RECOVERY_UPDATER_EXTRA_LIBS += liboempartitioning_static
+DEVICE_BASE_BOOT_IMAGE := device/asus/ctp-common/boot.img
+DEVICE_BASE_RECOVERY_IMAGE := device/asus/ctp-common/recovery.img
 
 # Adb
 BOARD_FUNCTIONFS_HAS_SS_COUNT := true
