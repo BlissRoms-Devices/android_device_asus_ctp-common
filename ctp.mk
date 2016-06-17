@@ -299,3 +299,11 @@ PRODUCT_PACKAGES += \
 # Marshmallow Compatibility Library
 PRODUCT_PACKAGES += \
 	libmmcompat
+
+# Features removed from "user" builds
+PRODUCT_PACKAGES += \
+	su \
+	screencap \
+	procmem \
+	procrank
+
