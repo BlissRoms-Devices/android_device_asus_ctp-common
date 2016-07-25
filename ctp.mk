@@ -40,11 +40,6 @@ PRODUCT_PACKAGES += \
     audio.r_submix.default \
     audio.usb.default
 
-PRODUCT_COPY_FILES += \
-    device/asus/ctp-common/audio/asound.conf:system/etc/asound.conf \
-    device/asus/ctp-common/audio/audio_policy.conf:system/etc/audio_policy.conf \
-    device/asus/ctp-common/audio/route_criteria.conf:system/etc/route_criteria.conf
-
 # Bluetooth
 PRODUCT_COPY_FILES += \
     device/asus/ctp-common/bluetooth/bt_vendor.conf:system/etc/bluetooth/bt_vendor.conf
@@ -76,10 +71,6 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     libshim_gps
-
-PRODUCT_COPY_FILES += \
-    device/asus/ctp-common/configs/gps.conf:system/etc/gps.conf \
-    device/asus/ctp-common/configs/gpsconfig.xml:system/etc/gpsconfig.xml
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.spid.gps.tty=ttyMFD3
@@ -119,9 +110,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.widevine.cachesize=16777216
 
 PRODUCT_COPY_FILES += \
-    device/asus/ctp-common/media/media_codecs.xml:system/etc/media_codecs.xml \
-    device/asus/ctp-common/media/media_profiles.xml:system/etc/media_profiles.xml \
-    device/asus/ctp-common/media/wrs_omxil_components.list:system/etc/wrs_omxil_components.list \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
@@ -212,9 +200,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_sensors
 
-PRODUCT_COPY_FILES += \
-    device/asus/ctp-common/configs/sensor_hal_config_default.xml:system/etc/sensor_hal_config_default.xml
-
 # pvr
 PRODUCT_PACKAGES += \
     libpvr2d
@@ -257,11 +242,6 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
-PRODUCT_COPY_FILES += \
-    device/asus/ctp-common/configs/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
-
-$(call inherit-product-if-exists, vendor/asus/ctp-common/ctp-common-vendor.mk)
-
 # stlport required for our LP blobs
 PRODUCT_PACKAGES += \
     libstlport
@@ -278,8 +258,6 @@ PRODUCT_PACKAGES += \
     tinycap \
     tinymix
 
-PRODUCT_COPY_FILES += \
-    device/asus/ctp-common/audio/silence.wav:system/etc/silence.wav
 
 # Add WiFi Firmware
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339/device-bcm.mk)
@@ -287,3 +265,26 @@ $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4339
 # hardware optimizations
 #PRODUCT_PROPERTY_OVERRIDES += \
 #    dalvik.vm.isa.x86.features=sse4_2,aes_in,popcnt,movbe
+
+
+# MultiDisplay
+PRODUCT_PACKAGES += \
+	libmultidisplay
+
+# Marshmallow Compatibility Library
+PRODUCT_PACKAGES += \
+	libmmcompat
+
+
+# Features removed from "user" builds
+PRODUCT_PACKAGES += \
+	su \
+	screencap \
+	procmem \
+	procrank
+
+#Custom RR OTA app
+PRODUCT_PACKAGES += \
+  OTA_Downloader \
+  RR_OTA
+

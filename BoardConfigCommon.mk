@@ -55,6 +55,8 @@ BOARD_KERNEL_CMDLINE += debug_locks=0
 
 TARGET_RECOVERY_UPDATER_LIBS += libintel_updater
 TARGET_RECOVERY_UPDATER_EXTRA_LIBS += liboempartitioning_static
+DEVICE_BASE_BOOT_IMAGE := device/asus/ctp-common/boot.img
+DEVICE_BASE_RECOVERY_IMAGE := device/asus/ctp-common/recovery.img
 
 # Adb
 BOARD_FUNCTIONFS_HAS_SS_COUNT := true
@@ -194,3 +196,8 @@ endif
 
 # Use the non-open-source parts, if they're present
 -include vendor/asus/ctp-common/BoardConfigVendor.mk
+
+# MultiDisplay
+TARGET_USE_DUMMY_MULTIPLE_DISPLAY := false
+TARGET_HAS_MULTIPLE_DISPLAY := true
+USE_MDS_LEGACY := true
